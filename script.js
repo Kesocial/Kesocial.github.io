@@ -41,7 +41,9 @@ btnTrabajos.onclick = function() {
     navSubSection[0].classList.toggle("collapse-works");
     navbar[0].classList.remove("active");
 }
-
+btnInicio.onclick = function() {
+    navbar[0].classList.remove("active");
+}
 enviar.onclick = function() {
     let nombre = document.getElementById("nombre");
     let edad = document.getElementById("edad");
