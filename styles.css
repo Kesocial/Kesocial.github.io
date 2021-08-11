@@ -317,3 +317,29 @@ footer {
     margin: 5% 35% 20% 35%;
     background-size: cover;
 }
+
+.active {
+  width: 70px;
+}
+
+.nav-navbar {
+  width: 300px;
+}
+
+.form {
+  min-width: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.style-button {
+  width: 100%;
+  margin: 50px 10% 50px 13%;
+  max-width: 200px;
+  min-width: 100px;
+}
+
+.container {
+  margin-right: 10%;
+  margin-left: 20%;
+}
