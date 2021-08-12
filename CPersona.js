@@ -33,32 +33,35 @@ class CPersona {
     }
 }
 
-
 let enviar = document.getElementsByClassName("enviar");
-
 var nombre = document.getElementById("nombre");
 var edad = document.getElementById("edad");
 var dni = document.getElementById("dni");
 var genero = document.getElementById("genero");
 var altura = document.getElementById("altura");
 var peso = document.getElementById("peso");
-var condicion = true;
+
 let main = document.getElementsByClassName("main");
 let datos = document.getElementsByClassName("datos");
 var datosArray = [nombre, edad, dni, genero, peso, altura];
 
 enviar[0].onclick = function() {
+    let condicion = false;
 
-    if ((nombre.value == null || nombre.value.length == 0 || /^\s+$/.test(nombre.value)) &&
-        (edad.value == null || edad.value.length == 0 || /^\s+$/.test(edad.value)) &&
-        (dni.value == null || dni.value.length == 0 || /^\s+$/.test(dni.value)) &&
-        (genero.value == null || genero.value.length == 0 || /^\s+$/.test(genero.value)) &&
-        (altura.value == null || altura.value.length == 0 || /^\s+$/.test(altura.value)) &&
-        (peso.value == null || peso.value.length == 0 || /^\s+$/.test(peso.value))) {
+    if ((nombre.value == null) || (nombre.value.length == 0) || (/^\s+$/.test(nombre.value)) &&
+        (edad.value == null) || (edad.value.length == 0) || (/^\s+$/.test(edad.value)) &&
+        (dni.value == null) || (dni.value.length == 0) || (/^\s+$/.test(dni.value)) &&
+        (genero.value == null) || (genero.value.length == 0) || (/^\s+$/.test(genero.value)) &&
+        (altura.value == null) || (altura.value.length == 0) || (/^\s+$/.test(altura.value)) &&
+        (peso.value == null) || (peso.value.length == 0) || (/^\s+$/.test(peso.value))
+    ) {
         condicion = false;
     } else {
         condicion = true;
     }
+
+    var x;
+
 
     if (condicion) {
         let observaciones = document.getElementsByClassName("observaciones");
