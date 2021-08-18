@@ -9,12 +9,12 @@ class CPersona {
     }
 
     calcularIMC() {
-        let imc = (this.peso / Math.pow(this.altura, 2));
+        let imc = this.peso / Math.pow(this.altura, 2);
         let valor;
         if (imc < 20) {
             valor = -1;
         }
-        if ((imc >= 20) && (imc <= 25)) {
+        if (imc >= 20 && imc <= 25) {
             valor = 0;
         }
         if (imc > 25) {
@@ -30,6 +30,20 @@ class CPersona {
             condicion = false;
         }
         return condicion;
+    }
+    genero() {
+        let respuesta = "";
+        if (
+            this.genero == "M" &&
+            this.genero == "m" &&
+            this.genero == "F" &&
+            this.genero == "f"
+        ) {
+            respuesta = "El genero ingresado es correcto";
+        } else {
+            respuesta = "El genero ingresado es incorrecto";
+        }
+        return respuesta;
     }
 }
 
@@ -48,12 +62,20 @@ var datosArray = [nombre, edad, dni, genero, peso, altura];
 enviar[0].onclick = function() {
     let condicion = false;
 
-    if ((nombre.value == null) || (nombre.value.length == 0) || (/^\s+$/.test(nombre.value)) &&
-        (edad.value == null) || (edad.value.length == 0) || (/^\s+$/.test(edad.value)) &&
-        (dni.value == null) || (dni.value.length == 0) || (/^\s+$/.test(dni.value)) &&
-        (genero.value == null) || (genero.value.length == 0) || (/^\s+$/.test(genero.value)) &&
-        (altura.value == null) || (altura.value.length == 0) || (/^\s+$/.test(altura.value)) &&
-        (peso.value == null) || (peso.value.length == 0) || (/^\s+$/.test(peso.value))
+    if (
+        nombre.value == null ||
+        nombre.value.length == 0 ||
+        (/^\s+$/.test(nombre.value) && edad.value == null) ||
+        edad.value.length == 0 ||
+        (/^\s+$/.test(edad.value) && dni.value == null) ||
+        dni.value.length == 0 ||
+        (/^\s+$/.test(dni.value) && genero.value == null) ||
+        genero.value.length == 0 ||
+        (/^\s+$/.test(genero.value) && altura.value == null) ||
+        altura.value.length == 0 ||
+        (/^\s+$/.test(altura.value) && peso.value == null) ||
+        peso.value.length == 0 ||
+        /^\s+$/.test(peso.value)
     ) {
         condicion = false;
     } else {
@@ -62,14 +84,20 @@ enviar[0].onclick = function() {
 
     var x;
 
-
     if (condicion) {
         let observaciones = document.getElementsByClassName("observaciones");
         for (i = 0; i < datosArray.length; i++) {
             datos[i].innerHTML = datos[i].innerHTML + " " + datosArray[i].value;
         }
 
-        const p1 = new CPersona(nombre, parseInt(edad.value), dni, genero, parseInt(peso.value), parseFloat(altura.value));
+        const p1 = new CPersona(
+            nombre,
+            parseInt(edad.value),
+            dni,
+            genero,
+            parseInt(peso.value),
+            parseFloat(altura.value)
+        );
         let imc = 0;
         imc = p1.calcularIMC();
         switch (imc) {
@@ -84,23 +112,32 @@ enviar[0].onclick = function() {
                 break;
         }
         let esMayorDeEdad = p1.esMayorDeEdad();
+        let respuesta = p1.genero();
+        // Muestro si es mayor de edad
         if (esMayorDeEdad) {
             observaciones[1].innerHTML = "Usted es mayor de edad";
         } else {
             observaciones[1].innerHTML = "Usted es menor de edad";
         }
+        if (esMayorDeEdad) {
+            observaciones[1].innerHTML = "Usted es mayor de edad";
+        } else {
+            observaciones[1].innerHTML = "Usted es menor de edad";
+        }
+        // Muestro si el genero ingresado es correcto
+
+        observaciones[2].innerHTML = respuesta;
+
         main[0].classList.add("display-none");
         main[1].classList.remove("display-none");
-
     } else {
         alerta.classList.remove("display-none");
     }
-
-}
+};
 enviar[1].onclick = function() {
     for (i = 0; i < datosArray.length; i++) {
         datos[i].innerHTML = datos[i].innerHTML.replace(datosArray[i].value, " ");
     }
     main[0].classList.remove("display-none");
     main[1].classList.add("display-none");
-}
+};
