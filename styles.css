@@ -195,4 +195,15 @@ input[type="text"] {
     .style-button {
         margin: 10px 30% 20px 30% !important;
     }
+    .input:focus+.nombre .text,
+    .input:valid+.nombre .text,
+    .input:focus+.edad .text,
+    .input:valid+.edad .text,
+    .input:focus+.dni .text,
+    .input:valid+.dni .text {
+        bottom: 3em !important;
+    }
+    input[type="text"] {
+        font-size: 0.8em !important;
+    }
 }
