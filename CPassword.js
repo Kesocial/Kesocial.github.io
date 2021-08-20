@@ -45,3 +45,38 @@ class CPassword {
         return resultado;
     }
 }
+let inputs = document.getElementsByClassName("input");
+let main = document.getElementsByClassName("main");
+let datos = document.getElementsByClassName("datos");
+let enviar = document.getElementsByClassName("enviar");
+enviar[0].onclick = function() {
+    let condicion = false;
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (
+            inputs[i].value == null ||
+            inputs[i].value.length == 0 ||
+            /^\s+$/.test(inputs[i].value)
+        ) {
+            condicion = false;
+            console.log(condicion);
+        } else {
+            condicion = true;
+            console.log(condicion);
+            break;
+        }
+    }
+    if (condicion) {
+        main[0].classList.add("display-none");
+        main[1].classList.remove("display-none");
+    } else {
+        alerta.classList.remove("display-none");
+    }
+};
+enviar[1].onclick = function() {
+    for (i = 0; i < datosArray.length; i++) {
+        datos[i].innerHTML = datos[i].innerHTML.replace(datosArray[i].value, " ");
+    }
+    main[0].classList.remove("display-none");
+    main[1].classList.add("display-none");
+};

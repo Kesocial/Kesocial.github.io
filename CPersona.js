@@ -31,14 +31,10 @@ class CPersona {
         }
         return condicion;
     }
-    genero() {
+    gen() {
         let respuesta = "";
-        if (
-            this.genero == "M" &&
-            this.genero == "m" &&
-            this.genero == "F" &&
-            this.genero == "f"
-        ) {
+        let genMay = this.genero.value.toUpperCase();
+        if (genMay == "M" || genMay == "F") {
             respuesta = "El genero ingresado es correcto";
         } else {
             respuesta = "El genero ingresado es incorrecto";
@@ -112,7 +108,7 @@ enviar[0].onclick = function() {
                 break;
         }
         let esMayorDeEdad = p1.esMayorDeEdad();
-        let respuesta = p1.genero();
+        let respuesta = p1.gen();
         // Muestro si es mayor de edad
         if (esMayorDeEdad) {
             observaciones[1].innerHTML = "Usted es mayor de edad";
@@ -125,7 +121,6 @@ enviar[0].onclick = function() {
             observaciones[1].innerHTML = "Usted es menor de edad";
         }
         // Muestro si el genero ingresado es correcto
-
         observaciones[2].innerHTML = respuesta;
 
         main[0].classList.add("display-none");

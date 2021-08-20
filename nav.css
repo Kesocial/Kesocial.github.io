@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     transition: all 0.4s ease;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 50vh;
     height: 100vh;
@@ -108,12 +108,14 @@
 }
 
 .nav-SubSection {
+    display: flex;
     position: absolute;
     transform: translateY(2em) !important;
     opacity: 0;
     z-index: -1;
     transition: all 0.3s ease;
     margin: 0;
+    flex-direction: column;
 }
 
 .nav-item {
