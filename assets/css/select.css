@@ -1,0 +1,95 @@
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 200px;
+    margin: auto;
+}
+
+.selectbox {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s ease all;
+    padding-left: 10px;
+    position: relative;
+    z-index: 200;
+    border: 2px solid transparent;
+}
+
+.titulo,
+.subTitulo {
+    user-select: none;
+    margin-bottom: 0px;
+    color: #2ecece;
+    font-weight: 50;
+    font-size: 0.7em;
+    font-family: "Roboto", sans-serif;
+}
+
+.subTitulo {
+    font-size: 0.5em;
+    margin: 0 10px 0 10px;
+}
+
+.opciones {
+    background: rgba(0, 8, 40, 85%);
+    backdrop-filter: blur(30px);
+    max-height: 400px;
+    overflow: auto;
+    z-index: 100;
+    width: 100%;
+    display: none;
+    position: absolute;
+}
+
+.opciones.active2 {
+    display: block;
+    animation: mostrar 0.3s forwards;
+}
+
+@keyframes mostrar {
+    0% {
+        transform: translateY(-200px) scale(0.5);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.contenido-opcion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: 0.2s ease all;
+}
+
+.opciones .contenido-opcion {
+    padding: 5px !important;
+}
+
+.opciones .contenido-opcion:hover {
+    background: #213f8f;
+}
+
+.opciones .contenido-opcion:hover .titulo,
+.opciones .contenido-opcion:hover .descripcion {
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .selectbox {
+        width: 100%;
+    }
+}

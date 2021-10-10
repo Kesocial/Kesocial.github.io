@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Staatliches", cursive;
+}
+
+span,
+input {
+    font-family: "Roboto", sans-serif;
+}
+
+.body {
+    background-color: rgb(13, 6, 68);
+    color: rgb(255, 255, 255);
+}
+
+.div {
+    padding-top: 1em;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.body {
+    background-image: url(../multimedia/1Index.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 70%;
+    background-size: cover;
+}
+
+.main {
+    margin-top: 50px;
+    height: 70%;
+    width: 70%;
+    max-height: 2000px;
+    min-width: 200px;
+    max-width: 750px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    padding: 0px;
+    border-radius: 30px;
+}
+
+.main h1 {
+    padding-top: 20px;
+}
+
+svg {
+    width: var(--size1);
+    height: var(--size1);
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+}
+
+.form2 .form {
+    max-width: 600px;
+}
+
+.form2 .form .input {
+    max-width: 600px;
+}
+
+.form .input {
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    max-width: 400px;
+    background: none;
+    color: #fff;
+    border: none;
+    outline: 0px;
+}
+
+.form .nombre,
+.form .edad,
+.form .dni {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #c7c7c7;
+    user-select: none;
+    display: inline-block;
+}
+
+.text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.text2 {
+    text-align: right;
+    color: #2ecece;
+    font-weight: bold;
+}
+
+.nombre::after,
+.form .edad::after,
+.form .dni::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+input[type="text"] {
+    font-size: 1em !important;
+}
+
+.input:focus+.nombre .text,
+.input:valid+.nombre .text,
+.input:focus+.edad .text,
+.input:valid+.edad .text,
+.input:focus+.dni .text,
+.input:valid+.dni .text {
+    bottom: 3.5em;
+    font-size: 0.5em;
+    color: #2ecece;
+}
+
+.input:valid+.nombre::after,
+.input:focus+.nombre::after,
+.input:valid+.edad::after,
+.input:focus+.edad::after,
+.input:valid+.dni::after,
+.input:focus+.dni::after {
+    transform: translateX(0%);
+}
+
+.div label span {
+    font-size: 1em;
+}
+
+.active .nav-img {
+    margin-top: 50px;
+    transition: all 0.8s ease;
+}
+
+.active #btn {
+    left: 30%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.style-button {
+    width: 5em;
+    height: 2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 60px;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    border: none;
+    user-select: none;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.mainIndex {
+    width: 100%;
+    height: 100%;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 500px;
+    max-height: 200px;
+}
+
+.img {
+    border-radius: 50%;
+    margin: 5% 35% 20% 35%;
+    background-size: cover;
+}
+
+.display-none {
+    display: none;
+}
+
+.CPersona {
+    margin: 5%;
+    padding: 10%;
+}
+
+.CPersona .datos {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.observaciones {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.alerta {
+    height: 7em;
+    font-size: 0.7em;
+}
+
+
+/* CPassword */
+
+.view-password {
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+.view-password:hover {
+    opacity: 0.5;
+}
+
+.CPassword {
+    margin: 5%;
+    padding: 10%;
+}
+
+.CPassword .datos {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.opciones2 {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    height: 70px;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.opciones2 a {
+    text-align: center;
+    word-break: break-all;
+    width: 30%;
+    margin: 5%;
+    padding: auto;
+    font-size: 0.8em;
+    color: #2ecece;
+}
+
+.opcionSpec {
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.section__opcion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3.6em;
+    height: 1.5em;
+    user-select: none;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.linea {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 3px solid #2ecece;
+    transform: translateX(-500%);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.active2 .linea {
+    transform: translateX(0%);
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.form:nth-child(2) {
+    z-index: 150;
+    position: relative;
+}
+
+.form2 .categorias {
+    display: inline-flex;
+}
+
+.categoria {
+    padding-top: 2em;
+}
+
+.subText {
+    display: inline-block;
+    font-size: 0.5em;
+    font-family: "Roboto", sans-serif;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.form2>.form>.categorias>.categorias>.categoria>.section__opcion {
+    width: 100% !important;
+    margin: 1px !important;
+}
+
+.form2>.form>.categorias {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    max-height: 500px !important;
+}
+
+
+/* Reesponsive */
+
+@media only screen and (max-width: 600px) {
+     :root {
+        font-size: 20px !important;
+        --size1: 2em;
+    }
+    .form {
+        min-width: 100px;
+    }
+    .active .nav-dropdown-menu {
+        display: none !important;
+    }
+    .active {
+        height: 50px !important;
+        background: transparent !important;
+        backdrop-filter: blur(0px) !important;
+        pointer-events: none;
+    }
+    input[type="text"] {
+        font-size: 0.8em !important;
+    }
+    .nav-navbar {
+        height: 100% !important;
+        position: absolute;
+        width: 100% !important;
+        max-width: 600px !important;
+    }
+    .categorias:nth-child(1),
+    .categorias:nth-child(3) {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+        max-height: 500px !important;
+    }
+    .categoria:nth-child(1),
+    .categoria:nth-child(2),
+    .categoria:nth-child(3) {
+        height: 2em !important;
+    }
+    .section__opcion:nth-child(1),
+    .section__opcion:nth-child(3) {
+        width: 100% !important;
+        margin: 1px !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    span {
+        font-size: 0.5em !important;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .fontMin {
+        font-size: 0.5em !important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+     :root {
+        font-size: 15px !important;
+    }
+    .nav-menu {
+        left: 10px !important;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "xabikos.javascriptsnippets",
+    "lonefy.vscode-js-css-html-formatter",
+    "esbenp.prettier-vscode"
+  ],
+  "editor.formatOnSave": false
+}
